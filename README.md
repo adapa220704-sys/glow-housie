@@ -1,14 +1,12 @@
-# Glow Housie — Netlify ready
+# Glow Housie 🎱✨
 
-## Publish by drag and drop
+**Play the game live here: https://glow-housie.netlify.app/
 
-1. Sign in to your Netlify account, then open **https://app.netlify.com/drop**.
-2. Drag the complete **netlify-ready-game.zip** into the Drop zone. If your browser asks for a folder, unzip it and drag the complete project folder containing `netlify.toml` and `package.json`.
-3. Wait for Netlify's automatic Vite build and Function deployment. Open the resulting site URL and share it with friends.
+I built Glow Housie, a neon multiplayer Tambola. To capture that chaotic family game-night energy, I added manual "pen" marking, live chat, and floating emojis! 
 
-No GitHub, terminal commands, environment-variable configuration, API keys or database setup are required. **Stay signed in and upload the entire source project.** Netlify's signed-in Drop flow detects/builds source projects. Dropping only `dist/` or dropping while signed out publishes static files without the required backend build.
+The hardest part was fitting the 9-column ticket on tiny mobile screens without scrolling, and managing real-time sync using only Netlify's file storage. 
 
-Netlify config is already at the project root. It publishes `dist/` and discovers the single standard Function at `netlify/functions/game.ts`. Blobs storage and its runtime credentials are supplied automatically by Netlify. If your Netlify team has private-by-default enabled, use its normal site visibility setting to make the game accessible to friends.
+I loved designing the tactile ink animations! I learned so much about live game states and responsive UI. Next, I’ll add solo bot matches, leaderboards, and custom 2D avatars!
 
 ## Design and gameplay preserved
 
@@ -54,12 +52,6 @@ Guest cookies are HttpOnly/SameSite=Lax and Secure on HTTPS; only their SHA-256 
 ## Verification completed
 
 The tests run three complete rounds through API requests with two players in the same private room, generating real tickets and drawing all 90 numbers in every round. They check host permissions, unique tickets, private snapshots, manual marking, pause/resume, claim scoring, rematches, state synchronization, final winner, coins, daily rewards and duplicate-grant prevention.
-
-| Round | Pavan | Teja | Winner |
-|---|---:|---:|---|
-| 1 | 80 | 40 | Pavan |
-| 2 | 20 | 100 | Teja |
-| 3 | 100 | 20 | Pavan |
 
 **Final-round winner: Pavan, 100–20.** Aggregate test totals are 200–160, recorded for verification only; no tournament scoring change was introduced. The final wallet check is 570 coins for Pavan (including one collected daily reward) and 460 for Teja.
 
