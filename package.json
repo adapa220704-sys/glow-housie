@@ -1,0 +1,35 @@
+{
+  "name": "glow-housie-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/package-function.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/game.test.ts tests/meta.test.ts tests/netlify.test.ts tests/email.test.ts && node tests/ticket-ui.mjs",
+    "test:package": "node --experimental-strip-types tests/packaged-function.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "11.1.4",
+    "@netlify/functions": "6.0.2",
+    "lucide-react": "1.31.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@netlify/zip-it-and-ship-it": "16.3.0",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "esbuild": "0.28.1",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vite": "8.0.13"
+  }
+}
